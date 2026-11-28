@@ -200,7 +200,7 @@ function card(b){
 }
 function fillYears(){
   const cur=$('yr').value;
-  const years=[...new Set(books.flatMap(b=>(b.readings||[]).map(x=>x.year)).filter(Boolean))].sort((a,b)=>b-a);
+  const years=[2026,2025]; // в фильтре только годы, по которым список полный
   $('yr').innerHTML='<option value="">Любой год прочтения</option>'+years.map(y=>`<option${String(y)===cur?' selected':''}>${esc(y)}</option>`).join('');
 }
 function render(){
